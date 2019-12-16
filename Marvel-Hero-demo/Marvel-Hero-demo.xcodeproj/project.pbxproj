@@ -18,6 +18,8 @@
 		9CAE0C3323A7CFBE00BB5885 /* Marvel_Hero_demoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAE0C3223A7CFBE00BB5885 /* Marvel_Hero_demoTests.swift */; };
 		9CAE0C3E23A7CFBE00BB5885 /* Marvel_Hero_demoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAE0C3D23A7CFBE00BB5885 /* Marvel_Hero_demoUITests.swift */; };
 		9CAE0C4C23A7DD6D00BB5885 /* DetailViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9CAE0C4B23A7DD6D00BB5885 /* DetailViewController.storyboard */; };
+		9CAE0C5023A7EC6600BB5885 /* Comic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAE0C4F23A7EC6600BB5885 /* Comic.swift */; };
+		9CAE0C5223A7ECC300BB5885 /* Thumbnail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAE0C5123A7ECC300BB5885 /* Thumbnail.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,8 @@
 		9CAE0C3D23A7CFBE00BB5885 /* Marvel_Hero_demoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Marvel_Hero_demoUITests.swift; sourceTree = "<group>"; };
 		9CAE0C3F23A7CFBE00BB5885 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9CAE0C4B23A7DD6D00BB5885 /* DetailViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailViewController.storyboard; sourceTree = "<group>"; };
+		9CAE0C4F23A7EC6600BB5885 /* Comic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comic.swift; sourceTree = "<group>"; };
+		9CAE0C5123A7ECC300BB5885 /* Thumbnail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Thumbnail.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,15 +109,13 @@
 		9CAE0C1623A7CFB700BB5885 /* Marvel-Hero-demo */ = {
 			isa = PBXGroup;
 			children = (
+				9CAE0C4E23A7EC3B00BB5885 /* Models */,
+				9CAE0C4D23A7EB8700BB5885 /* Resources */,
 				9CAE0C1723A7CFB700BB5885 /* AppDelegate.swift */,
 				9CAE0C1923A7CFB700BB5885 /* ViewController.swift */,
 				9CAE0C1B23A7CFB700BB5885 /* StoryboardProtocol.swift */,
 				9CAE0C1D23A7CFB700BB5885 /* AppCoordinator.swift */,
 				9CAE0C1F23A7CFB700BB5885 /* Coordinator.swift */,
-				9CAE0C2123A7CFB700BB5885 /* ViewController.storyboard */,
-				9CAE0C4B23A7DD6D00BB5885 /* DetailViewController.storyboard */,
-				9CAE0C2423A7CFBD00BB5885 /* Assets.xcassets */,
-				9CAE0C2623A7CFBD00BB5885 /* LaunchScreen.storyboard */,
 				9CAE0C2923A7CFBD00BB5885 /* Info.plist */,
 			);
 			path = "Marvel-Hero-demo";
@@ -135,6 +137,26 @@
 				9CAE0C3F23A7CFBE00BB5885 /* Info.plist */,
 			);
 			path = "Marvel-Hero-demoUITests";
+			sourceTree = "<group>";
+		};
+		9CAE0C4D23A7EB8700BB5885 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9CAE0C2423A7CFBD00BB5885 /* Assets.xcassets */,
+				9CAE0C2123A7CFB700BB5885 /* ViewController.storyboard */,
+				9CAE0C4B23A7DD6D00BB5885 /* DetailViewController.storyboard */,
+				9CAE0C2623A7CFBD00BB5885 /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		9CAE0C4E23A7EC3B00BB5885 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9CAE0C4F23A7EC6600BB5885 /* Comic.swift */,
+				9CAE0C5123A7ECC300BB5885 /* Thumbnail.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -270,10 +292,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				9CAE0C1E23A7CFB700BB5885 /* AppCoordinator.swift in Sources */,
+				9CAE0C5023A7EC6600BB5885 /* Comic.swift in Sources */,
 				9CAE0C1A23A7CFB700BB5885 /* ViewController.swift in Sources */,
 				9CAE0C2023A7CFB700BB5885 /* Coordinator.swift in Sources */,
 				9CAE0C1823A7CFB700BB5885 /* AppDelegate.swift in Sources */,
 				9CAE0C1C23A7CFB700BB5885 /* StoryboardProtocol.swift in Sources */,
+				9CAE0C5223A7ECC300BB5885 /* Thumbnail.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
