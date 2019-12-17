@@ -8,6 +8,7 @@
 
 import Foundation
 
+// Extend the enum with more endpoints CRUD / *
 enum MarvelEndpoint {
     
      case getComics

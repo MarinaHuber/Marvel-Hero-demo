@@ -17,11 +17,11 @@ final class ComicTableViewController: UIViewController, StoryboardProtocol {
     @IBOutlet weak var tableView: UITableView!
     var comics: [ComicResult] = []
     var dataSource: UITableViewDiffableDataSource<Section, ComicResult>!
-    let client = MarvelAPIClient()
+    let client = MarvelDataLoader()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        client.request(model:[ComicResult].self) { result in
+        client.request(endpoint: .getComics, model:[ComicResult].self) { result in
             switch result {
             case .success:
                 print("\(result)")
