@@ -20,10 +20,7 @@ final class ComicTableViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-
-        dataSource = UITableViewDiffableDataSource
-            <Section, ComicResult>(tableView: tableView) {
+        dataSource = UITableViewDiffableDataSource <Section, ComicResult>(tableView: tableView) {
                 (tableView: UITableView, indexPath: IndexPath,
                 country: ComicResult) -> UITableViewCell? in
                 let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
@@ -38,10 +35,10 @@ override func viewDidLayoutSubviews() {
   }
 }
 
-extension TableViewController: UITableViewDelegate {
+extension ComicTableViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let country = dataSource.itemIdentifier(for: indexPath) {
-            print("Selected country \(country.name)")
+        if let comic = dataSource.itemIdentifier(for: indexPath) {
+            print("Selected country \(String(describing: comic.name))")
         }
     }
 }
