@@ -7,21 +7,25 @@
 //
 
 import UIKit
+import Foundation
 
 struct Thumbnail: Decodable {
+    enum ImageKeys: String, CodingKey {
+        case path = "path"
+        case fileExtension = "extension"
+    }
 
-private enum Keys: String, CodingKey {
-    case path = "path"
-    case fileExtension = "extension"
-}
+    let url: URL
 
-let url: URL?
-var image: UIImage = #imageLiteral(resourceName: "Nil")
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: ImageKeys.self)
 
-init(from decoder: Decoder) throws {
-    let values = try decoder.container(keyedBy: Keys.self)
-    let path = try values.decode(String.self, forKey: .path)
-    let fileExtension = try values.decode(String.self, forKey: .fileExtension)
-    self.url = URL(string: "\(path).\(fileExtension)")
-  }
+        let path = try container.decode(String.self, forKey: .path)
+        let fileExtension = try container.decode(String.self, forKey: .fileExtension)
+
+        guard let url = URL(string: "\(path).\(fileExtension)") else {
+            throw DecodingError.typeMismatch(Thumbnail.self, DecodingError.Context(codingPath: decoder.codingPath, debugDescription: "Wrong type for Thumbnail"))
+        }
+            self.url = url
+    }
 }

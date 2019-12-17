@@ -8,15 +8,24 @@
 
 import Foundation
 
-struct Comic:Decodable {
+struct ComicResult: Decodable, Hashable {
 
-    enum Keys:String,CodingKey {
+    enum Keys: String,CodingKey {
         case name = "title"
         case thumbnail
     }
     
-    let name:String?
-    let thumbnail:Thumbnail?
+    let name: String?
+    let thumbnail: Thumbnail?
+    let identifier = UUID()
+
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(identifier)
+    }
+
+    static func ==(lhs: ComicResult, rhs: ComicResult) -> Bool {
+        return lhs.identifier == rhs.identifier
+    }
     
     public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: Keys.self)
