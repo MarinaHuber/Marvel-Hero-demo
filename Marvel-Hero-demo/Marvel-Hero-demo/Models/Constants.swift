@@ -7,18 +7,18 @@
 //
 
 import Foundation
-struct Keys {
-    static let privateKey: String = "PRIVATE_KEY"
-    static let publicKey: String = "PUBLIC_KEY"
+enum Keys {
+    static let privateKey = "7350d213cbf3ad6569b44da0df06aca3e9255225"
+    static let publicKey = "0c2f02f8b9f688f68e2966152baab9ad"
 }
 
-struct Servies {
-    static let base: String = "https://gateway.marvel.com/v1/public/"
-}
+//enum Servies {
+//    static let base = "https://gateway.marvel.com/v1/public/"
+//}
 
-struct ServiceParameters {
-    static let apiKey: String = "apikey"
-    static let hash: String = "hash"
-    static let timestamp: String = "ts"
-    static let offset: String = "offset"
+enum ServiceParameters {
+    static let apiKey = "apikey"
+    static let hash = "hash"
+    static let timestamp = "ts"
+    static let offset = "offset"
 }

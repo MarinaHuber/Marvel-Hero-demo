@@ -9,8 +9,6 @@
 import Foundation
 
 struct ComicResult: Decodable, Hashable {
-    
-     let identifier = UUID()
 
     enum Keys: String,CodingKey {
         case name = "title"
@@ -19,6 +17,7 @@ struct ComicResult: Decodable, Hashable {
 
     let name: String?
     let thumbnail: Thumbnail?
+    let identifier = UUID()
     
     static func == (lhs: ComicResult, rhs: ComicResult) -> Bool {
         return lhs.identifier == rhs.identifier

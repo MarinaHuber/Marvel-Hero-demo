@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class ComicTableViewController: UIViewController {
+final class ComicTableViewController: UIViewController, StoryboardProtocol {
 
     enum Section: CaseIterable {
         case main
@@ -16,18 +16,29 @@ final class ComicTableViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     var comics: [ComicResult] = []
-    var dataSource: UITableViewDiffableDataSource<Section, ComicResult>!
+  //  var dataSource: UITableViewDiffableDataSource<Section, ComicResult>!
+    let client = MarvelAPIClient()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        dataSource = UITableViewDiffableDataSource <Section, ComicResult>(tableView: tableView) {
-                (tableView: UITableView, indexPath: IndexPath,
-                country: ComicResult) -> UITableViewCell? in
-                let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-                cell.textLabel?.text = country.name
-                return cell
+        client.request(model:[ComicResult].self) { result in
+            switch result {
+            case .success:
+                print("\(result)")
+
+            case .failure:
+                print(result)
+            }
         }
-        dataSource.defaultRowAnimation = .fade
+            
+//        dataSource = UITableViewDiffableDataSource <Section, ComicResult>(tableView: tableView) {
+//                (tableView: UITableView, indexPath: IndexPath,
+//                country: ComicResult) -> UITableViewCell? in
+//                let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+//                cell.textLabel?.text = country.name
+//                return cell
+//        }
+//        dataSource.defaultRowAnimation = .fade
     }
 
 override func viewDidLayoutSubviews() {
@@ -36,9 +47,9 @@ override func viewDidLayoutSubviews() {
 }
 
 extension ComicTableViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let comic = dataSource.itemIdentifier(for: indexPath) {
-            print("Selected country \(String(describing: comic.name))")
-        }
-    }
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        if let comic = dataSource.itemIdentifier(for: indexPath) {
+//            print("Selected country \(String(describing: comic.name))")
+//        }
+//    }
 }

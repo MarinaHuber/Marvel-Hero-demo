@@ -10,13 +10,35 @@ import Foundation
 
 /// Implementation of a generic-based Marvel API client
 
-class MarvelAPIClient {
+struct MarvelAPIClient {
 
     
     
-    internal func fetch<T: Codable>(listOf codable: T.Type,
-                         withURL url: URL?,
-                         completionHandler: @escaping (Result<[T], APIError>) -> Void) {
+    func request<T: Decodable>(model: T.Type, completion: @escaping (Result<[T], Error>) -> ()) {
         
+       var components = URLComponents()
+        components.scheme = "https"
+        components.host = "gateway.marvel.com:443/v1"
+        components.path = "/public/comics"
+        components.queryItems = [
+          URLQueryItem(name: "ts", value: "1"),
+          URLQueryItem(name: "apikey", value: "0c2f02f8b9f688f68e2966152baab9ad"),
+          URLQueryItem(name: "hash", value: "19f7270e1108f3edb32bb12e47f48191")
+        ]
+        let request = URLRequest(url: components.url!)
+
+        let session = URLSession.shared
+        let dataTask = session.dataTask(with: request, completionHandler: { (data, response, error) -> Void in
+          if (error != nil) {
+            print(APIError.invalidURL)
+          } else {
+            let httpResponse = response as? HTTPURLResponse
+            let decoded = try! JSONDecoder().decode(T.self, from: data!)
+            print(httpResponse)
+          }
+        })
+
+        dataTask.resume()
     }
+    
 }

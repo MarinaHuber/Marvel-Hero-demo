@@ -18,8 +18,8 @@ class AppCoordinator: Coordinator {
     }
 
     func start() {
-		let storyboard: UIStoryboard = UIStoryboard(name: "ViewController", bundle: nil)
-        let vc: ViewController = ViewController.instantiate(from: storyboard)
+		let storyboard: UIStoryboard = UIStoryboard(name: "ComicTableViewController", bundle: nil)
+        let vc: ComicTableViewController = ComicTableViewController.instantiate(from: storyboard)
 		presenter.pushViewController(vc, animated: false)
 	}
 }
