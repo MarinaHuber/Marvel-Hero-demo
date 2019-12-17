@@ -8,22 +8,36 @@
 
 import Foundation
 
-enum MarvelComicRouter {
-
-   static let scheme = "https"
-
-    // 3.
-    static let host = "gateway.marvel.com"
-
-
-    static let path = "/v1/public/comics"
+enum MarvelEndpoint {
     
-//    static let params: Parameters = [
-//        "apikey": dict.publicKey!,
-//        "ts": ts,
-//        "hash": (ts + dict.privateKey! + dict.publicKey!).md5(),
-//        "orderBy": "-focDate",
-//        "limit" : limit,
-//        "offset" : offset,
-//    ]
+     case getComics
+
+     var scheme: String {
+       switch self {
+       case .getComics:
+         return "https"
+       }
+     }
+    
+    var host: String {
+      switch self {
+      case .getComics:
+        return "gateway.marvel.com:443/v1"
+      }
+    }
+    
+    var path : String {
+        switch self {
+        case .getComics:
+            return "/public/comics"
+        }
+    }
+    
+    var queryItems : [URLQueryItem] {
+        return [URLQueryItem(name: "ts", value: "1"),
+        URLQueryItem(name: "apikey", value: "0c2f02f8b9f688f68e2966152baab9ad"),
+        URLQueryItem(name: "hash", value: "19f7270e1108f3edb32bb12e47f48191")]
+    }
 }
+
+

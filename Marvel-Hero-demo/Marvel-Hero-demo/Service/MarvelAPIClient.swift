@@ -8,23 +8,22 @@
 
 import Foundation
 
-/// Implementation of a generic-based Marvel API client
+/// Implementation of a generic-based Marvel API clienć
 
 struct MarvelAPIClient {
 
-    
-    
-    func request<T: Decodable>(model: T.Type, completion: @escaping (Result<[T], Error>) -> ()) {
+    func request<T: Decodable>(endpoint: MarvelEndpoint ,model: T.Type, completion: @escaping (Result<[T], Error>) -> ()) {
         
        var components = URLComponents()
-        components.scheme = "https"
+        components.scheme = endpoint.scheme
         components.host = "gateway.marvel.com:443/v1"
         components.path = "/public/comics"
-        components.queryItems = [
-          URLQueryItem(name: "ts", value: "1"),
-          URLQueryItem(name: "apikey", value: "0c2f02f8b9f688f68e2966152baab9ad"),
-          URLQueryItem(name: "hash", value: "19f7270e1108f3edb32bb12e47f48191")
-        ]
+        components.queryItems = endpoint.queryItems
+//            [
+//          URLQueryItem(name: "ts", value: "1"),
+//          URLQueryItem(name: "apikey", value: "0c2f02f8b9f688f68e2966152baab9ad"),
+//          URLQueryItem(name: "hash", value: "19f7270e1108f3edb32bb12e47f48191")
+//        ]
         let request = URLRequest(url: components.url!)
 
         let session = URLSession.shared

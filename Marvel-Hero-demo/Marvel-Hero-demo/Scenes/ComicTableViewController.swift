@@ -16,7 +16,7 @@ final class ComicTableViewController: UIViewController, StoryboardProtocol {
 
     @IBOutlet weak var tableView: UITableView!
     var comics: [ComicResult] = []
-  //  var dataSource: UITableViewDiffableDataSource<Section, ComicResult>!
+    var dataSource: UITableViewDiffableDataSource<Section, ComicResult>!
     let client = MarvelAPIClient()
 
     override func viewDidLoad() {
@@ -31,14 +31,14 @@ final class ComicTableViewController: UIViewController, StoryboardProtocol {
             }
         }
             
-//        dataSource = UITableViewDiffableDataSource <Section, ComicResult>(tableView: tableView) {
-//                (tableView: UITableView, indexPath: IndexPath,
-//                country: ComicResult) -> UITableViewCell? in
-//                let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-//                cell.textLabel?.text = country.name
-//                return cell
-//        }
-//        dataSource.defaultRowAnimation = .fade
+        dataSource = UITableViewDiffableDataSource <Section, ComicResult>(tableView: tableView) {
+                (tableView: UITableView, indexPath: IndexPath,
+                country: ComicResult) -> UITableViewCell? in
+                let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+                cell.textLabel?.text = country.name
+                return cell
+        }
+        dataSource.defaultRowAnimation = .fade
     }
 
 override func viewDidLayoutSubviews() {
@@ -47,9 +47,9 @@ override func viewDidLayoutSubviews() {
 }
 
 extension ComicTableViewController: UITableViewDelegate {
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        if let comic = dataSource.itemIdentifier(for: indexPath) {
-//            print("Selected country \(String(describing: comic.name))")
-//        }
-//    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let comic = dataSource.itemIdentifier(for: indexPath) {
+            print("Selected country \(String(describing: comic.name))")
+        }
+    }
 }
