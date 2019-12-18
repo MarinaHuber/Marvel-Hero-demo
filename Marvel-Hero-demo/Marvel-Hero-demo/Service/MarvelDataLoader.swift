@@ -8,11 +8,11 @@
 
 import Foundation
 
-/// Implementation of a generic-based Marvel API client
+/// Implementation of a generic-based Marvel API function
 
 struct MarvelDataLoader {
     
-    func request<T: Decodable>(endpoint: MarvelEndpoint, model: T.Type, completion: @escaping (Result<[T], Error>) -> ()) {
+    func request<T: Decodable>(_ endpoint: MarvelEndpoint, model: T.Type, completion: @escaping (Result<T, Error>) -> ()) {
         
         var components = URLComponents()
         components.scheme = endpoint.scheme
@@ -22,18 +22,29 @@ struct MarvelDataLoader {
         
         let request = URLRequest(url: components.url!)
         
-        let session = URLSession.shared
-        let dataTask = session.dataTask(with: request, completionHandler: { (data, response, error) -> Void in
-            if (error != nil) {
-                print(APIError.invalidURL)
-            } else {
-                let httpResponse = response as? HTTPURLResponse
-                let decoded = try! JSONDecoder().decode(T.self, from: data!)
-                print(decoded)
+        let session = URLSession(configuration: .default)
+        session.dataTask(with: request, completionHandler: { data, response, error in
+            guard error == nil else {
+                completion(.failure(APIError.invalidURL))
+                return
             }
-        })
-        
-        dataTask.resume()
+            guard let data = data else { return }
+            do {
+                let httpResponse = response as? HTTPURLResponse
+                if httpResponse?.statusCode != 200 {
+                    print("statusCode should be 200, but is \(String(describing: httpResponse?.statusCode))")
+                }
+                let decoder = JSONDecoder()
+                decoder.dateDecodingStrategy = .iso8601
+                let responseObject = try decoder.decode(T.self, from: data)
+                
+                DispatchQueue.main.async {
+                    completion(.success(responseObject))
+                }
+            } catch let error {
+                completion(.failure(error))
+            }
+        }).resume()
     }
-    
+
 }

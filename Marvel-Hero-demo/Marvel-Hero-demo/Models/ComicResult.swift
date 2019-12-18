@@ -8,16 +8,16 @@
 
 import Foundation
 
+// MARK: - ResultStruct
 struct ComicResult: Decodable, Hashable {
-
+    let name: String?
+    let thumbnail: Thumbnail?
+    let identifier = UUID()
+    
     enum Keys: String,CodingKey {
         case name = "title"
         case thumbnail
     }
-
-    let name: String?
-    let thumbnail: Thumbnail?
-    let identifier = UUID()
     
     static func == (lhs: ComicResult, rhs: ComicResult) -> Bool {
         return lhs.identifier == rhs.identifier
@@ -28,7 +28,11 @@ struct ComicResult: Decodable, Hashable {
 
     public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: Keys.self)
-        self.name = try values.decode(String.self, forKey: .name)
+        do {
+            self.name = try values.decode(String.self, forKey: .name)
+        } catch {
+            self.name = nil
+        }
         self.thumbnail = try values.decodeIfPresent(Thumbnail.self, forKey: .thumbnail)
     }
 }

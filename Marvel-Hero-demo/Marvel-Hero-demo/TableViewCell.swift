@@ -22,8 +22,8 @@ class TableViewCell : UITableViewCell {
 
 extension TableViewCell {
 
-    func fillWithData(_ data: ComicResult) {
-        titleLabel.text = data.name
+    func fillWithData(_ data: [ComicResult]) {
+       // titleLabel.text = data.map { $0.name }
     }
 }
 // MARK: - UI -

@@ -16,26 +16,32 @@ final class ComicTableViewController: UIViewController, StoryboardProtocol {
 
     @IBOutlet weak var tableView: UITableView!
     var comics: [ComicResult] = []
-    var dataSource: UITableViewDiffableDataSource<Section, ComicResult>!
+    var dataSource: UITableViewDiffableDataSource<Section, [ComicResult]>!
     let client = MarvelDataLoader()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        client.request(endpoint: .getComics, model:[ComicResult].self) { result in
+        client.request(.getComics, model: ComicObjectData.self) { result in
             switch result {
             case .success:
-                print("\(result)")
+                print("some stufff: \(result)")
+                _ = result.map { self.setDateSource(with:
+                    $0.data?.results ?? []) }
 
             case .failure:
-                print(result)
+                print("some error: \(APIError.networkFailed)")
             }
         }
             
-        dataSource = UITableViewDiffableDataSource <Section, ComicResult>(tableView: tableView) {
+    }
+    
+    private func setDateSource(with comics: [ComicResult]) {
+               dataSource = UITableViewDiffableDataSource <Section, [ComicResult]>(tableView: tableView) {
                 (tableView: UITableView, indexPath: IndexPath,
-                country: ComicResult) -> UITableViewCell? in
+                comics: [ComicResult]) -> UITableViewCell? in
                 let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-                cell.textLabel?.text = country.name
+                _ = comics.map {
+                  cell.textLabel?.text = $0.name }
                 return cell
         }
         dataSource.defaultRowAnimation = .fade
@@ -49,7 +55,7 @@ override func viewDidLayoutSubviews() {
 extension ComicTableViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let comic = dataSource.itemIdentifier(for: indexPath) {
-            print("Selected country \(String(describing: comic.name))")
+           // print("Selected country \(String(describing: comic.name))")
         }
     }
 }

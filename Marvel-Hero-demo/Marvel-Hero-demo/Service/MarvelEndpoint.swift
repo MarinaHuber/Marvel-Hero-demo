@@ -8,7 +8,7 @@
 
 import Foundation
 
-// Extend the enum with more endpoints CRUD / *
+/// Extend the enum with more endpoints CRUD / *
 enum MarvelEndpoint {
     
      case getComics
@@ -23,20 +23,20 @@ enum MarvelEndpoint {
     var host: String {
       switch self {
       case .getComics:
-        return "gateway.marvel.com:443/v1"
+        return "gateway.marvel.com"
       }
     }
     
     var path : String {
         switch self {
         case .getComics:
-            return "/public/comics"
+            return "/v1/public/comics"
         }
     }
     
     var queryItems : [URLQueryItem] {
         return [URLQueryItem(name: "ts", value: "1"),
-        URLQueryItem(name: "apikey", value: "0c2f02f8b9f688f68e2966152baab9ad"),
+                URLQueryItem(name: "apikey", value: Keys.publicKey),
         URLQueryItem(name: "hash", value: "19f7270e1108f3edb32bb12e47f48191")]
     }
 }
