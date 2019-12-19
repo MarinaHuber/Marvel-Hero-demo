@@ -1,4 +1,4 @@
-framework module Pods_Marvel_Hero_demo {
+module Pods_Marvel_Hero_demo {
   umbrella header "Pods-Marvel-Hero-demo-umbrella.h"
 
   export *

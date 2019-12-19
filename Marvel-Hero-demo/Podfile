@@ -1,17 +1,10 @@
-source 'https://github.com/CocoaPods/Specs.git'
-platform :ios, '13.0'
-use_frameworks!
+platform :ios, '12.0'
+ use_modular_headers!
 
 target 'Marvel-Hero-demo' do
-    pod 'AlamofireImage', '~> 3.5'
+
+  	pod 'AlamofireImage', '~> 3.5.2'
+
+  # Pods for MartianDemoApp
+
 end
-
-  target 'Marvel-Hero-demoTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
-  target 'Marvel-Hero-demoUITests' do
-    # Pods for testing
-  end
-

@@ -15,6 +15,11 @@ class AppCoordinator: Coordinator {
     init(navigationController: UINavigationController) {
         self.presenter = navigationController
 		self.childCoordinators = []
+        let red = UIColor(named: "marvelRedColor")
+        let white = UIColor(named: "marvelGreyTextColor")
+        presenter.navigationBar.barTintColor = red
+        presenter.navigationBar.tintColor = white
+        presenter.navigationBar.titleTextAttributes = [.foregroundColor : white as Any]
     }
 
     func start() {

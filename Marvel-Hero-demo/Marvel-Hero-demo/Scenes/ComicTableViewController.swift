@@ -15,13 +15,17 @@ final class ComicTableViewController: UIViewController, StoryboardProtocol {
     }
     let cellIdentifier = "cellID"
     @IBOutlet weak var tableView: UITableView!
-    // private(set) var comicsArray: [ComicResult] = []
     private (set) var tableDataSource:UITableViewDiffableDataSource<Section, ComicResult>!
     let client = MarvelDataLoader()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureSnapshot()
+        tableView.rowHeight = UITableView.automaticDimension
+        let tableViewInsent = UITableView.init(frame: .zero, style: .insetGrouped)
+        tableView = tableViewInsent
+     
+        
         client.request(.getComics, model: ComicObjectData.self) { result in
             switch result {
             case .success:
@@ -59,6 +63,9 @@ extension ComicTableViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let comic = tableDataSource.itemIdentifier(for: indexPath) {
             print("Selected country \(String(describing: comic.name))")
+            let storyboard: UIStoryboard = UIStoryboard(name: "DetailViewController", bundle: nil)
+            let vc: DetailViewController = DetailViewController.instantiate(from: storyboard)
+            navigationController?.pushViewController(vc, animated: false)
         }
     }
 }

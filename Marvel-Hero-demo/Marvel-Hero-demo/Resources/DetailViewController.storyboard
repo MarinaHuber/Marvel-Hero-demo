@@ -7,20 +7,34 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Detail View Controller-->
         <scene sceneID="nDl-07-Xdd">
             <objects>
-                <viewController id="GMi-0V-nHa" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailViewController" id="GMi-0V-nHa" customClass="DetailViewController" customModule="Marvel_Hero_demo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0Pp-Ua-xtB">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QsC-lK-lC2">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="QsC-lK-lC2" firstAttribute="trailing" secondItem="qTe-1T-39Y" secondAttribute="trailing" id="LDO-0n-bF5"/>
+                            <constraint firstItem="QsC-lK-lC2" firstAttribute="leading" secondItem="qTe-1T-39Y" secondAttribute="leading" id="bWv-ED-lNJ"/>
+                            <constraint firstItem="QsC-lK-lC2" firstAttribute="top" secondItem="0Pp-Ua-xtB" secondAttribute="top" id="d0J-dd-7eg"/>
+                            <constraint firstAttribute="bottom" secondItem="QsC-lK-lC2" secondAttribute="bottom" id="y9l-rg-XtL"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="qTe-1T-39Y"/>
                     </view>
+                    <connections>
+                        <outlet property="imageComicCover" destination="QsC-lK-lC2" id="h2A-3d-h9J"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XxY-ga-j5t" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-157" y="139"/>
+            <point key="canvasLocation" x="-157.97101449275362" y="138.61607142857142"/>
         </scene>
     </scenes>
 </document>
