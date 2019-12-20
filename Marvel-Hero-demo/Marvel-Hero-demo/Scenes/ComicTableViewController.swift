@@ -37,7 +37,7 @@ final class ComicTableViewController: UIViewController, StoryboardProtocol {
         activityMain.isHidden = false
         activityMain.startAnimating()
      }
-    
+        // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         loadView()
@@ -84,7 +84,6 @@ extension ComicTableViewController: UITableViewDelegate {
     
      func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let comic = dataSource.itemIdentifier(for: indexPath) {
-            print("Selected country \(String(describing: comic.name))")
             let storyboard: UIStoryboard = UIStoryboard(name: "DetailViewController", bundle: nil)
             let vc: DetailViewController = DetailViewController.instantiate(from: storyboard)
             vc.selectedName = comic.name ?? ""

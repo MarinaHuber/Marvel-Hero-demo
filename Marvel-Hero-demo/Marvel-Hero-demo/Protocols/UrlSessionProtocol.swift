@@ -7,8 +7,8 @@
 //
 
 import Foundation
-
-typealias DataTaskResult = (Data?, URLResponse?, Error?) -> Swift.Void
+///this is currently not used due the app scope
+typealias DataTaskResult = (Data?, URLResponse?, Error?) -> Void
 
 protocol URLSessionProtocol {
     func data(with url: URL, completionHandler: @escaping DataTaskResult) -> URLSessionDataTaskProtocol
@@ -20,7 +20,6 @@ extension URLSession: URLSessionProtocol {
         return dataTask(with: url, completionHandler: completionHandler)
     }
 }
-
 
 protocol URLSessionDataTaskProtocol {
     func resume()

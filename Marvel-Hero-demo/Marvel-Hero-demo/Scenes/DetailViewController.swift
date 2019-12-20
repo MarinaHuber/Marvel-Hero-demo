@@ -11,16 +11,19 @@ import AlamofireImage
 
 final class DetailViewController: UIViewController, StoryboardProtocol {
     
+        // MARK: - Properties
     @IBOutlet weak var activityImage: UIActivityIndicatorView!
     @IBOutlet weak var imageComicCover: UIImageView!
     var selectedName: String = ""    
     
+        // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         activityImage?.startAnimating()
         loadSelectedName(newName: selectedName)
     }
-    
+        // MARK: - Network load
+      /// TO DO: refactor this expensive func
     private func loadSelectedName(newName: String) {
         ///af_setImage will automatically find and load the image if it is cached
         if newName.isEmpty == false, newName == selectedName {

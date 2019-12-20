@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+        // MARK: - Helper for TableView
 extension UITableView {
 
     func dequeueCell<CellType: UITableViewCell>(ofType: CellType.Type, for indexPath: IndexPath) -> CellType {

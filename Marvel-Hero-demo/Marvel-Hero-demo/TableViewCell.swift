@@ -45,7 +45,6 @@ private extension TableViewCell {
         titleLabel.textColor = .label
         titleLabel.numberOfLines = 0
 
-
         // Layout
 
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
