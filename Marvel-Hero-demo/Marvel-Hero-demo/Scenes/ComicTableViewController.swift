@@ -13,6 +13,7 @@ final class ComicTableViewController: UIViewController, StoryboardProtocol {
     enum Section: CaseIterable {
         case main
     }
+    @IBOutlet weak var activityMain: UIActivityIndicatorView!
     let cellIdentifier = "cellID"
     @IBOutlet weak var tableView: UITableView!
     private (set) var tableDataSource:UITableViewDiffableDataSource<Section, ComicResult>!
@@ -31,11 +32,19 @@ final class ComicTableViewController: UIViewController, StoryboardProtocol {
             case .success:
                 _ = result.map {
                     self.updateSnapshot(with: $0.data?.results ?? [], animate: true)
+                    print("whole object \(String(describing: $0.data?.results))")
+                    self.activityMain.stopAnimating()
+                    self.activityMain.isHidden = true
                 }
             case .failure:
                 print("some error: \(APIError.networkFailed)")
             }
         }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        activityMain.startAnimating()
     }
 }
 
@@ -56,6 +65,7 @@ private extension ComicTableViewController {
         snapshot.appendSections(Section.allCases)
         snapshot.appendItems(comicsList, toSection: .main)
         tableDataSource.apply(snapshot, animatingDifferences: animate)
+        //acivityMain.hidesWhenStopped = !tableView.isHidden
     }
 }
 
@@ -65,6 +75,8 @@ extension ComicTableViewController: UITableViewDelegate {
             print("Selected country \(String(describing: comic.name))")
             let storyboard: UIStoryboard = UIStoryboard(name: "DetailViewController", bundle: nil)
             let vc: DetailViewController = DetailViewController.instantiate(from: storyboard)
+            vc.selectedName = comic.name ?? ""
+           // vc.delegate = self
             navigationController?.pushViewController(vc, animated: false)
         }
     }

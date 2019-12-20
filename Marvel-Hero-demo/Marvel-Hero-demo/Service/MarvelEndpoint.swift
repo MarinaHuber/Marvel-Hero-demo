@@ -12,24 +12,25 @@ import Foundation
 enum MarvelEndpoint {
     
      case getComics
+     case getComicCover(String)
 
      var scheme: String {
        switch self {
-       case .getComics:
+       case .getComics, .getComicCover(_):
          return "https"
        }
      }
     
     var host: String {
       switch self {
-      case .getComics:
+      case .getComics, .getComicCover(_):
         return "gateway.marvel.com"
       }
     }
     
     var path : String {
         switch self {
-        case .getComics:
+        case .getComics, .getComicCover(_):
             return "/v1/public/comics"
         }
     }
@@ -37,7 +38,7 @@ enum MarvelEndpoint {
     var queryItems : [URLQueryItem] {
         return [URLQueryItem(name: "ts", value: "1"),
                 URLQueryItem(name: "apikey", value: Keys.publicKey),
-        URLQueryItem(name: "hash", value: "19f7270e1108f3edb32bb12e47f48191")]
+                URLQueryItem(name: "hash", value: Keys.hashKey)]
     }
 }
 
