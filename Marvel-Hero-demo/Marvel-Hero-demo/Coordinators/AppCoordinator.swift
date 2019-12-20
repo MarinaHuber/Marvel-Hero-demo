@@ -28,3 +28,9 @@ class AppCoordinator: Coordinator {
 		presenter.pushViewController(vc, animated: false)
 	}
 }
+
+extension UINavigationController {
+   open override var preferredStatusBarStyle: UIStatusBarStyle {
+      return navigationController?.preferredStatusBarStyle ?? .lightContent
+   }
+}

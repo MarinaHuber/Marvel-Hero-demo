@@ -16,24 +16,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kpA-L4-6tf">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellID" id="JDO-L6-YBJ">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="JDO-L6-YBJ" id="as7-nz-EqY">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="piY-py-iIT"/>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="i6q-QW-343"/>
-                                </connections>
-                            </tableView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="iOD-3s-4bB">
                                 <rect key="frame" x="179.5" y="420.5" width="55" height="55"/>
                                 <constraints>
@@ -46,17 +28,12 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="iOD-3s-4bB" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Ci7-PT-mrz"/>
-                            <constraint firstItem="kpA-L4-6tf" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Q6z-1y-6MF"/>
-                            <constraint firstAttribute="bottom" secondItem="kpA-L4-6tf" secondAttribute="bottom" id="UPd-Bn-mJY"/>
-                            <constraint firstItem="kpA-L4-6tf" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Vy7-n9-b04"/>
                             <constraint firstItem="iOD-3s-4bB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="pbd-0A-X0e"/>
-                            <constraint firstItem="kpA-L4-6tf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="tv7-8V-gFo"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="activityMain" destination="iOD-3s-4bB" id="2dj-6V-Ahh"/>
-                        <outlet property="tableView" destination="kpA-L4-6tf" id="BZM-VO-QoB"/>
+                        <outlet property="activityMain" destination="iOD-3s-4bB" id="xaK-53-gG8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

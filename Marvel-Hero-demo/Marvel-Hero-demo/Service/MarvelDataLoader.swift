@@ -32,7 +32,7 @@ struct MarvelDataLoader {
             do {
                 let httpResponse = response as? HTTPURLResponse
                 if httpResponse?.statusCode != 200 {
-                    print("statusCode should be 200, but is \(String(describing: httpResponse?.statusCode))")
+                    fatalError("statusCode should be 200, but is \(String(describing: httpResponse?.statusCode))")
                 }
                 let decoder = JSONDecoder()
                 decoder.dateDecodingStrategy = .iso8601

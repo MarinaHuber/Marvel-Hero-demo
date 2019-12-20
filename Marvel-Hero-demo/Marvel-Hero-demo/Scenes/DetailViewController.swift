@@ -13,9 +13,7 @@ final class DetailViewController: UIViewController, StoryboardProtocol {
     
     @IBOutlet weak var activityImage: UIActivityIndicatorView!
     @IBOutlet weak var imageComicCover: UIImageView!
-    var selectedName: String = ""
-    //weak var delegate: ComicTableViewController!
-    
+    var selectedName: String = ""    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +24,7 @@ final class DetailViewController: UIViewController, StoryboardProtocol {
     private func loadSelectedName(newName: String) {
         ///af_setImage will automatically find and load the image if it is cached
         if newName.isEmpty == false, newName == selectedName {
-            MarvelDataLoader().request(.getComicCover(newName), model: ComicObjectData.self) { result in
+            MarvelDataLoader().request(.getComics, model: ComicObjectData.self) { result in
                 switch result {
                 case .success:
                     _ = result.map {
@@ -52,24 +50,12 @@ final class DetailViewController: UIViewController, StoryboardProtocol {
                 }
             }
         } else {
-            self.alert(message: "No comics", title: "Unknown name")
+            UIAlertController().alert(message: "No comics", title: "Unknown name")
         }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         activityImage?.startAnimating()
-    }
-    
-    
-    //MARK: Error alert
-   private func alert(message: String, title: String) {
-        DispatchQueue.main.async {
-            let alertController = UIAlertController(title: title, message:   message, preferredStyle: .alert)
-            let OKAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-            alertController.addAction(OKAction)
-            self.present(alertController, animated: true)
-        }
-
     }
 }
