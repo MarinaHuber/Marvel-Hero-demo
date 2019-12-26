@@ -21,7 +21,6 @@ final class ComicTableViewController: UIViewController, StoryboardProtocol {
     
     override func loadView() {
          super.loadView()
-
          let tableView = UITableView.init(frame: .zero, style: .insetGrouped)
          tableView.translatesAutoresizingMaskIntoConstraints = false
          tableView.rowHeight = 50
@@ -57,7 +56,6 @@ final class ComicTableViewController: UIViewController, StoryboardProtocol {
             }
         }
     }
-
 }
 // MARK: - TableView DataSource
 private extension ComicTableViewController {
@@ -70,8 +68,7 @@ private extension ComicTableViewController {
             return cell
         })
     }
-    
-    
+        
     private func updateSnapshot(with comicsList: [ComicResult], animate: Bool = true) {
         var snapshot = NSDiffableDataSourceSnapshot<Section, ComicResult>()
         snapshot.appendSections(Section.allCases)

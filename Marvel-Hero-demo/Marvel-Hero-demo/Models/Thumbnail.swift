@@ -14,7 +14,6 @@ struct Thumbnail: Decodable {
         case path = "path"
         case fileExtension = "extension"
     }
-
     let url: URL
 
     init(from decoder: Decoder) throws {

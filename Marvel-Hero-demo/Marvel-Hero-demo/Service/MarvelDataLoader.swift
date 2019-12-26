@@ -13,7 +13,6 @@ import Foundation
 struct MarvelDataLoader {
     
     func request<T: Decodable>(_ endpoint: MarvelEndpoint, model: T.Type, completion: @escaping (Result<T, Error>) -> ()) {
-        
         var components = URLComponents()
         components.scheme = endpoint.scheme
         components.host = endpoint.host
@@ -32,7 +31,7 @@ struct MarvelDataLoader {
             do {
                 let httpResponse = response as? HTTPURLResponse
                 if httpResponse?.statusCode != 200 {
-                    fatalError("statusCode should be 200, but is \(String(describing: httpResponse?.statusCode))")
+                    assert(false, "statusCode should be 200, but is \(String(describing: httpResponse?.statusCode))")
                 }
                 let decoder = JSONDecoder()
                 decoder.dateDecodingStrategy = .iso8601

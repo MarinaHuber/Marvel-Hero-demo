@@ -21,6 +21,7 @@ final class DetailViewController: UIViewController, StoryboardProtocol {
         super.viewDidLoad()
         activityImage?.startAnimating()
         loadSelectedName(newName: selectedName)
+        imageComicCover.clipsToBounds = true
     }
         // MARK: - Network load
       /// TO DO: refactor this expensive func
@@ -49,7 +50,7 @@ final class DetailViewController: UIViewController, StoryboardProtocol {
                         }
                     }
                 case .failure:
-                    print("some error: \(APIError.networkFailed)")
+                    assertionFailure("some error: \(APIError.networkFailed)")
                 }
             }
         } else {

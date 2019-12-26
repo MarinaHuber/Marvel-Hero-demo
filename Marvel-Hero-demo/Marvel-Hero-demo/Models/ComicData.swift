@@ -10,11 +10,5 @@ import Foundation
 
 // MARK: - DataStruct
 struct ComicData: Decodable {
-    
-//    enum Keys: String,CodingKey {
-//        case comics = "results"
-//    }
     let results: [ComicResult]
-    
-
 }

@@ -38,7 +38,6 @@ private extension TableViewCell {
     func configureUI() {
 
         // StylinglessThanOrEqualTo
-
         titleLabel.textAlignment = .natural
         titleLabel.font = UIFont(descriptor: UIFont.preferredFont(forTextStyle: .title3).fontDescriptor.withSymbolicTraits(.traitMonoSpace)!, size: 0)
         titleLabel.textColor = .systemGray
@@ -46,7 +45,6 @@ private extension TableViewCell {
         titleLabel.numberOfLines = 0
 
         // Layout
-
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
 
         let container = self.contentView
