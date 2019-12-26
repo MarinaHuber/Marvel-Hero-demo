@@ -1,0 +1,10 @@
+platform :ios, '12.0'
+ use_modular_headers!
+
+target 'Marvel-Hero-demo' do
+
+  	pod 'AlamofireImage', '~> 3.5.2'
+
+  # Pods for MartianDemoApp
+
+end
