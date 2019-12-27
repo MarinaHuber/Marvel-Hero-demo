@@ -14,6 +14,7 @@
 		9C366ED523AA761D005530EE /* ComicData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C366ED423AA761D005530EE /* ComicData.swift */; };
 		9C366ED723AA7954005530EE /* ComicObjectData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C366ED623AA7954005530EE /* ComicObjectData.swift */; };
 		9C40AE9823B6C9FC0018CB39 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C40AE9723B6C9FC0018CB39 /* Utils.swift */; };
+		9C40AE9A23B6CC840018CB39 /* SimpleImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C40AE9923B6CC840018CB39 /* SimpleImageLoader.swift */; };
 		9C5FD33523AD540F008B5B90 /* UIAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5FD33423AD540B008B5B90 /* UIAlertView.swift */; };
 		9CAE0C1823A7CFB700BB5885 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAE0C1723A7CFB700BB5885 /* AppDelegate.swift */; };
 		9CAE0C1C23A7CFB700BB5885 /* StoryboardProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAE0C1B23A7CFB700BB5885 /* StoryboardProtocol.swift */; };
@@ -62,6 +63,7 @@
 		9C366ED423AA761D005530EE /* ComicData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicData.swift; sourceTree = "<group>"; };
 		9C366ED623AA7954005530EE /* ComicObjectData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicObjectData.swift; sourceTree = "<group>"; };
 		9C40AE9723B6C9FC0018CB39 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		9C40AE9923B6CC840018CB39 /* SimpleImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleImageLoader.swift; sourceTree = "<group>"; };
 		9C5FD33423AD540B008B5B90 /* UIAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertView.swift; sourceTree = "<group>"; };
 		9C8833F123AC200200D2134F /* AlamofireImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AlamofireImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C8833F323AC200D00D2134F /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -252,6 +254,7 @@
 				9CAE0C5723A837A400BB5885 /* MarvelDataLoader.swift */,
 				9C3597D823A936DA008A7DF4 /* MarvelEndpoint.swift */,
 				9CAE0C5923A8398100BB5885 /* APIError.swift */,
+				9C40AE9923B6CC840018CB39 /* SimpleImageLoader.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -434,6 +437,7 @@
 			files = (
 				9CAE0C1E23A7CFB700BB5885 /* AppCoordinator.swift in Sources */,
 				9C3597D323A91BBE008A7DF4 /* ComicTableViewController.swift in Sources */,
+				9C40AE9A23B6CC840018CB39 /* SimpleImageLoader.swift in Sources */,
 				9CAE0C5023A7EC6600BB5885 /* ComicResult.swift in Sources */,
 				9CDA438623AD30280013D602 /* TableViewCell.swift in Sources */,
 				9CAE0C5C23A8425300BB5885 /* UrlSessionProtocol.swift in Sources */,

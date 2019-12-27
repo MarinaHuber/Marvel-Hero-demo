@@ -45,5 +45,40 @@ struct MarvelDataLoader {
             }
         }).resume()
     }
+    
+        // MARK: Private methods
+        
+//        private func getFormattedError(responseData: Data?, defaultError: Error?) -> Error {
+//            if let data = responseData {
+//                if let baseResponse = try? JSONDecoder().decode(status.self, from: data),
+//                    let errorString = baseResponse.error {
+//                    return HTTPRequestError.custom(errorString)
+//                }
+//            }
+//            return defaultError ?? HTTPRequestError.invalidResponse
+//        }
+//    }
 
 }
+
+//    extension UrlSessionService {
+//        enum HTTPRequestError: Error {
+//            case invalidResponseDataType
+//            case invalidResponse
+//            case custom(String)
+//
+//            var localizedDescription: String {
+//                switch self {
+//                case .invalidResponseDataType:
+//                    return "Response's data format is different from expected."
+//                case .invalidResponse:
+//                    return "Invalid response."
+//                case .custom(let value):
+//                    return value
+//                }
+//            }
+//        }
+//    }
+
+
+
