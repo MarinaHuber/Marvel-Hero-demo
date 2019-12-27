@@ -13,6 +13,7 @@
 		9C3597D923A936DA008A7DF4 /* MarvelEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C3597D823A936DA008A7DF4 /* MarvelEndpoint.swift */; };
 		9C366ED523AA761D005530EE /* ComicData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C366ED423AA761D005530EE /* ComicData.swift */; };
 		9C366ED723AA7954005530EE /* ComicObjectData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C366ED623AA7954005530EE /* ComicObjectData.swift */; };
+		9C40AE9823B6C9FC0018CB39 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C40AE9723B6C9FC0018CB39 /* Utils.swift */; };
 		9C5FD33523AD540F008B5B90 /* UIAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5FD33423AD540B008B5B90 /* UIAlertView.swift */; };
 		9CAE0C1823A7CFB700BB5885 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAE0C1723A7CFB700BB5885 /* AppDelegate.swift */; };
 		9CAE0C1C23A7CFB700BB5885 /* StoryboardProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAE0C1B23A7CFB700BB5885 /* StoryboardProtocol.swift */; };
@@ -60,6 +61,7 @@
 		9C3597D823A936DA008A7DF4 /* MarvelEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelEndpoint.swift; sourceTree = "<group>"; };
 		9C366ED423AA761D005530EE /* ComicData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicData.swift; sourceTree = "<group>"; };
 		9C366ED623AA7954005530EE /* ComicObjectData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicObjectData.swift; sourceTree = "<group>"; };
+		9C40AE9723B6C9FC0018CB39 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		9C5FD33423AD540B008B5B90 /* UIAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertView.swift; sourceTree = "<group>"; };
 		9C8833F123AC200200D2134F /* AlamofireImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AlamofireImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C8833F323AC200D00D2134F /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -145,6 +147,14 @@
 			path = Scenes;
 			sourceTree = "<group>";
 		};
+		9C40AE9623B6C9E10018CB39 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				9C40AE9723B6C9FC0018CB39 /* Utils.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		9CAE0C0B23A7CFB600BB5885 = {
 			isa = PBXGroup;
 			children = (
@@ -170,6 +180,7 @@
 		9CAE0C1623A7CFB700BB5885 /* Marvel-Hero-demo */ = {
 			isa = PBXGroup;
 			children = (
+				9C40AE9623B6C9E10018CB39 /* Helpers */,
 				9CDA438223AD19880013D602 /* Coordinators */,
 				9C3597D123A91BA1008A7DF4 /* Scenes */,
 				9CAE0C5623A8378900BB5885 /* Service */,
@@ -436,6 +447,7 @@
 				9C5FD33523AD540F008B5B90 /* UIAlertView.swift in Sources */,
 				9CAE0C5823A837A400BB5885 /* MarvelDataLoader.swift in Sources */,
 				9CAE0C5223A7ECC300BB5885 /* Thumbnail.swift in Sources */,
+				9C40AE9823B6C9FC0018CB39 /* Utils.swift in Sources */,
 				9CAE0C5E23A8439E00BB5885 /* Constants.swift in Sources */,
 				9C3597D523A91BD1008A7DF4 /* DetailViewController.swift in Sources */,
 				9C366ED523AA761D005530EE /* ComicData.swift in Sources */,
