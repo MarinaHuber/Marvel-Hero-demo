@@ -32,7 +32,6 @@
 		9CAE0C5A23A8398100BB5885 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAE0C5923A8398100BB5885 /* APIError.swift */; };
 		9CAE0C5C23A8425300BB5885 /* UrlSessionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAE0C5B23A8425300BB5885 /* UrlSessionProtocol.swift */; };
 		9CAE0C5E23A8439E00BB5885 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CAE0C5D23A8439E00BB5885 /* Constants.swift */; };
-		9CDA438423AD19A90013D602 /* ComicTableViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CDA438323AD19A90013D602 /* ComicTableViewCoordinator.swift */; };
 		9CDA438623AD30280013D602 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CDA438523AD30280013D602 /* TableViewCell.swift */; };
 		A63E55201BA546319046334A /* libPods-Marvel-Hero-demo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BAADF59D3B2D37C296A195B7 /* libPods-Marvel-Hero-demo.a */; };
 /* End PBXBuildFile section */
@@ -89,7 +88,6 @@
 		9CAE0C5923A8398100BB5885 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		9CAE0C5B23A8425300BB5885 /* UrlSessionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlSessionProtocol.swift; sourceTree = "<group>"; };
 		9CAE0C5D23A8439E00BB5885 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		9CDA438323AD19A90013D602 /* ComicTableViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicTableViewCoordinator.swift; sourceTree = "<group>"; };
 		9CDA438523AD30280013D602 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		B1F4EC52ACF83B9D22CABAA7 /* Pods-Marvel-Hero-demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Marvel-Hero-demo.debug.xcconfig"; path = "Target Support Files/Pods-Marvel-Hero-demo/Pods-Marvel-Hero-demo.debug.xcconfig"; sourceTree = "<group>"; };
 		BAADF59D3B2D37C296A195B7 /* libPods-Marvel-Hero-demo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Marvel-Hero-demo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -262,7 +260,6 @@
 		9CDA438223AD19880013D602 /* Coordinators */ = {
 			isa = PBXGroup;
 			children = (
-				9CDA438323AD19A90013D602 /* ComicTableViewCoordinator.swift */,
 				9CAE0C1D23A7CFB700BB5885 /* AppCoordinator.swift */,
 			);
 			path = Coordinators;
@@ -441,7 +438,6 @@
 				9CAE0C5023A7EC6600BB5885 /* ComicResult.swift in Sources */,
 				9CDA438623AD30280013D602 /* TableViewCell.swift in Sources */,
 				9CAE0C5C23A8425300BB5885 /* UrlSessionProtocol.swift in Sources */,
-				9CDA438423AD19A90013D602 /* ComicTableViewCoordinator.swift in Sources */,
 				9C366ED723AA7954005530EE /* ComicObjectData.swift in Sources */,
 				9C3597D923A936DA008A7DF4 /* MarvelEndpoint.swift in Sources */,
 				9CAE0C5A23A8398100BB5885 /* APIError.swift in Sources */,

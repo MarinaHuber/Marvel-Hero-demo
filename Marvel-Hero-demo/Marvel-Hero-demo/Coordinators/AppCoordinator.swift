@@ -22,11 +22,19 @@ class AppCoordinator: Coordinator {
         presenter.navigationBar.titleTextAttributes = [.foregroundColor : white as Any]
     }
 
-    func start() {
+    public func start() {
 		let storyboard: UIStoryboard = UIStoryboard(name: "ComicTableViewController", bundle: nil)
         let vc: ComicTableViewController = ComicTableViewController.instantiate(from: storyboard)
+        vc.pushDetailBlock = { [weak self] in
+            self?.showDetail()
+        }
         presenter.show(vc, sender: nil)
 	}
+    private func showDetail() {
+        let storyboard: UIStoryboard = UIStoryboard(name: "DetailViewController", bundle: nil)
+        let vc: DetailViewController = DetailViewController.instantiate(from: storyboard)
+        presenter.show(vc, sender: nil)
+    }
 }
 
 extension UINavigationController {
