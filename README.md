@@ -9,6 +9,7 @@ The following commands will download the repository, and open the desired Xcode 
 git clone git@github.com/MarinaHuber/Marvel-Hero-demo.git
 cd Marvel-Hero-demo
 open Marvel-Hero-demo.xcodeproj
+pod install
 ```
 Technologies and patterns
 * Architecture flow
