@@ -27,7 +27,7 @@ final class DetailViewController: UIViewController, StoryboardProtocol {
       /// TO DO: refactor this expensive func
     private func loadSelectedName(newName: String) {
         ///af_setImage will automatically find and load the image if it is cached
-        if newName.isEmpty == false, newName == selectedName {
+        if newName.isEmpty == false {
             MarvelDataLoader().request(.getComics, model: ComicObjectData.self) { result in
                 switch result {
                 case .success:
