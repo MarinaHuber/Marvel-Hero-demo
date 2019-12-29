@@ -37,3 +37,7 @@ class SimpleImageLoader: ImageLoader {
         }
     }
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 1e90167b82d2aeadec29d50cbba0b4088c1d2414

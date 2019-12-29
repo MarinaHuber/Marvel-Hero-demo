@@ -29,9 +29,21 @@ class AppCoordinator: Coordinator {
     public func start() {
 		let storyboard: UIStoryboard = UIStoryboard(name: "ComicTableViewController", bundle: nil)
         let vc: ComicTableViewController = ComicTableViewController.instantiate(from: storyboard)
+<<<<<<< HEAD
         vc.delegate = self
         presenter.pushViewController(vc, animated: false)
+=======
+        vc.pushDetailBlock = { [weak self] in
+            self?.showDetail()
+        }
+        presenter.show(vc, sender: nil)
+>>>>>>> 1e90167b82d2aeadec29d50cbba0b4088c1d2414
 	}
+    private func showDetail() {
+        let storyboard: UIStoryboard = UIStoryboard(name: "DetailViewController", bundle: nil)
+        let vc: DetailViewController = DetailViewController.instantiate(from: storyboard)
+        presenter.show(vc, sender: nil)
+    }
 }
 
 extension AppCoordinator: DetailControllerDelegate {

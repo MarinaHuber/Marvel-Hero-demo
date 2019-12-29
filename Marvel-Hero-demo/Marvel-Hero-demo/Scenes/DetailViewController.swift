@@ -27,7 +27,7 @@ final class DetailViewController: UIViewController, StoryboardProtocol, Alertabl
       /// TO DO: refactor this expensive func
     private func loadSelectedName(newName: String) {
         ///af_setImage will automatically find and load the image if it is cached
-        if newName.isEmpty == false, newName == selectedName {
+ //       if newName.isEmpty == false {
             MarvelDataLoader().request(.getComics, model: ComicObjectData.self) { result in
                 switch result {
                 case .success:
@@ -35,9 +35,10 @@ final class DetailViewController: UIViewController, StoryboardProtocol, Alertabl
                         $0.data?.results.map {
                             if newName == $0.name {
                                 if let imageURL = $0.thumbnail?.url {
+                                    print("image url: \($0.thumbnail?.url)")
                                     self.imageComicCover?.af_setImage(withURL: imageURL,
                                                                       placeholderImage: nil,
-                                                                      imageTransition: UIImageView.ImageTransition.crossDissolve(0.3),
+                                                                      imageTransition: UIImageView.ImageTransition.crossDissolve(0.2),
                                                                       runImageTransitionIfCached: true,
                                                                       completion: { response in
                                                                         self.activityImage?.stopAnimating()
@@ -53,9 +54,15 @@ final class DetailViewController: UIViewController, StoryboardProtocol, Alertabl
                     assertionFailure("some error: \(APIError.networkFailed)")
                 }
             }
+<<<<<<< HEAD
         } else {
             presentAlert(title: "No comics", message: "Unknown name")
         }
+=======
+//        } else {
+//            presentAlert(title: "no image found", message: "try again")
+//        }
+>>>>>>> 1e90167b82d2aeadec29d50cbba0b4088c1d2414
     }
     
     override func viewWillAppear(_ animated: Bool) {

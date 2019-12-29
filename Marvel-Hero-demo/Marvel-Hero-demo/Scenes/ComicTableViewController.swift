@@ -23,6 +23,7 @@ final class ComicTableViewController: UIViewController, StoryboardProtocol {
     var delegate: DetailControllerDelegate?
     @IBOutlet weak var activityMain: UIActivityIndicatorView!
     weak var tableView: UITableView!
+    var pushDetailBlock: (() -> Void)?
     private (set) var dataSource:UITableViewDiffableDataSource<Section, ComicResult>!
     let client = MarvelDataLoader()
     
@@ -89,7 +90,14 @@ extension ComicTableViewController: UITableViewDelegate {
     
      func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let comic = dataSource.itemIdentifier(for: indexPath) {
+<<<<<<< HEAD
             delegate?.presentDetailViewController(with: comic.name)
+=======
+            let storyboard: UIStoryboard = UIStoryboard(name: "DetailViewController", bundle: nil)
+            let vc: DetailViewController = DetailViewController.instantiate(from: storyboard)
+            vc.selectedName = comic.name ?? ""
+            pushDetailBlock?()
+>>>>>>> 1e90167b82d2aeadec29d50cbba0b4088c1d2414
         }
     }
 }
