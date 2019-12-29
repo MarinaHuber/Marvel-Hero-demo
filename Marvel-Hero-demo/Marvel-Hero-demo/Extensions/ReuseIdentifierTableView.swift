@@ -11,7 +11,6 @@ import UIKit
 extension UITableView {
 
     func dequeueCell<CellType: UITableViewCell>(ofType: CellType.Type, for indexPath: IndexPath) -> CellType {
-        
         let reuseIdentifier = "\(CellType.self)"
         let someCell = self.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath)
         guard let cell = someCell as? CellType else {
@@ -21,7 +20,6 @@ extension UITableView {
     }
     
     func registerCell<CellType: UITableViewCell>(ofType: CellType.Type) {
-        
         let reuseIdentifier = "\(CellType.self)"
         self.register(CellType.self, forCellReuseIdentifier: reuseIdentifier)
     }

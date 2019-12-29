@@ -25,7 +25,7 @@ struct ComicResult: Decodable, Hashable {
     func hash(into hasher: inout Hasher) {
         hasher.combine(identifier)
     }
-
+    
     public init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: Keys.self)
         do {
