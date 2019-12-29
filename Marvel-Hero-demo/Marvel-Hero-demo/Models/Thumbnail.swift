@@ -9,6 +9,8 @@
 import UIKit
 import Foundation
 
+// MARK: Build image URL
+
 struct Thumbnail: Decodable {
     enum ImageKeys: String, CodingKey {
         case path = "path"

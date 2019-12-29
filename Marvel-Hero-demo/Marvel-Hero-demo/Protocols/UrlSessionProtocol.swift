@@ -8,6 +8,7 @@
 
 import Foundation
 ///this is currently not used due the app scope
+
 typealias DataTaskResult = (Data?, URLResponse?, Error?) -> Void
 
 protocol URLSessionProtocol {

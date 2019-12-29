@@ -9,6 +9,8 @@
 import Foundation
 
 /// Extend the enum with more endpoints CRUD / *
+// MARK: Endpoint default Marvel.com
+
 enum MarvelEndpoint {
     
      case getComics

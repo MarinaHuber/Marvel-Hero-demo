@@ -8,7 +8,8 @@
 
 import Foundation
 
-// MARK: - DataStruct
+// MARK: - DataStruct Nested
+
 struct ComicData: Decodable {
     let results: [ComicResult]
 }

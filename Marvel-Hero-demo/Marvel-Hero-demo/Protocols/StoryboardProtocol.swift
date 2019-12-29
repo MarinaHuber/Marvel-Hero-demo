@@ -8,6 +8,9 @@
 
 import UIKit
 
+// same ID and  VC name
+// MARK: Coordinator protocol
+
 protocol StoryboardProtocol: AnyObject {
     static func instantiate(from storyboard: UIStoryboard) -> Self
 }

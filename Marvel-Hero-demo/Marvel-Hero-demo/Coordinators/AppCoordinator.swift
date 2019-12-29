@@ -8,6 +8,8 @@
 
 import UIKit
 
+// MARK: All app navigation
+
 class AppCoordinator: Coordinator {
     var childCoordinators = [Coordinator]()
     var presenter: UINavigationController
@@ -29,13 +31,8 @@ class AppCoordinator: Coordinator {
         let vc: ComicTableViewController = ComicTableViewController.instantiate(from: storyboard)
         vc.delegate = self
         presenter.pushViewController(vc, animated: false)
-//        vc.showDetailAction = { [weak self] in
-//            presentDetailViewController()
-//        }
-        
 	}
 }
-
 
 extension AppCoordinator: DetailControllerDelegate {
     
@@ -45,11 +42,10 @@ extension AppCoordinator: DetailControllerDelegate {
         vc.selectedName = name ?? ""
         presenter.pushViewController(vc, animated: false)
         
-        }
+    }
 }
 
-
-
+// MARK: Status bar style
 extension UINavigationController {
    open override var preferredStatusBarStyle: UIStatusBarStyle {
       return navigationController?.preferredStatusBarStyle ?? .lightContent

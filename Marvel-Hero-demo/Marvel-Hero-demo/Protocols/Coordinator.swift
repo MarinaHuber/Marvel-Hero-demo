@@ -8,6 +8,8 @@
 
 import UIKit
 
+// MARK: Coordinator protocol
+
 protocol Coordinator: AnyObject {
 	var presenter: UINavigationController { get }
     var childCoordinators: [Coordinator] { get set }

@@ -8,6 +8,8 @@
 
 import UIKit
 
+// MARK: Coordinator protocol
+
 protocol DetailControllerDelegate {
     func presentDetailViewController(with name: String?)
 }

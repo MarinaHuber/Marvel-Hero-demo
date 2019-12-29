@@ -9,6 +9,7 @@
 import Foundation
 
 // MARK: - FirstDataStruct
+
 struct ComicObjectData: Decodable {
     let data: ComicData?
     

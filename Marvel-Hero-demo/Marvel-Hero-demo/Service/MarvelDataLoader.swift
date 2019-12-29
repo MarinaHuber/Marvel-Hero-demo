@@ -9,6 +9,7 @@
 import Foundation
 
 /// Implementation of a generic-based Marvel API function
+// MARK: Build request 
 
 struct MarvelDataLoader {
     
@@ -24,7 +25,7 @@ struct MarvelDataLoader {
         let session = URLSession(configuration: .default)
         session.dataTask(with: request, completionHandler: { data, response, error in
             guard error == nil else {
-                completion(.failure(APIError.invalidURL))
+                completion(.failure(APIError.invalidRequest))
                 return
             }
             guard let data = data else { return }

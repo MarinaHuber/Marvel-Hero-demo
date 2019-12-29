@@ -7,9 +7,11 @@
 //
 
 import Foundation
+
+
 enum APIError: Error {
-    case decoding
-    case invalidURL
+    case errorDecoding
+    case invalidRequest
     case networkFailed
     case invalidJSON
     case server(message: String)

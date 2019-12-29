@@ -9,6 +9,7 @@
 import Foundation
 
 // MARK: - ResultStruct
+
 struct ComicResult: Decodable, Hashable {
     let name: String?
     let thumbnail: Thumbnail?
