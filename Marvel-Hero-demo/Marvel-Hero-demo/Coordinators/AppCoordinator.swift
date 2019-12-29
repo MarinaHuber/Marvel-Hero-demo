@@ -25,7 +25,7 @@ class AppCoordinator: Coordinator {
     func start() {
 		let storyboard: UIStoryboard = UIStoryboard(name: "ComicTableViewController", bundle: nil)
         let vc: ComicTableViewController = ComicTableViewController.instantiate(from: storyboard)
-		presenter.pushViewController(vc, animated: false)
+        presenter.show(vc, sender: nil)
 	}
 }
 

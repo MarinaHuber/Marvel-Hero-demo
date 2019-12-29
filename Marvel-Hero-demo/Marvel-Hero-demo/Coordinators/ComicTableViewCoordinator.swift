@@ -20,6 +20,6 @@ class ComicTableViewCoordinator: Coordinator {
     func start() {
         let storyboard: UIStoryboard = UIStoryboard(name: "DetailViewController", bundle: nil)
         let vc: DetailViewController = DetailViewController.instantiate(from: storyboard)
-        presenter.pushViewController(vc, animated: false)
+        presenter.show(vc, sender: nil)
     }
 }

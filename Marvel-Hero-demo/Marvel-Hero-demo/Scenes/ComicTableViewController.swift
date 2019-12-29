@@ -84,7 +84,7 @@ extension ComicTableViewController: UITableViewDelegate {
             let storyboard: UIStoryboard = UIStoryboard(name: "DetailViewController", bundle: nil)
             let vc: DetailViewController = DetailViewController.instantiate(from: storyboard)
             vc.selectedName = comic.name ?? ""
-            navigationController?.pushViewController(vc, animated: false)
+            navigationController?.show(vc, sender: nil)
         }
     }
 }

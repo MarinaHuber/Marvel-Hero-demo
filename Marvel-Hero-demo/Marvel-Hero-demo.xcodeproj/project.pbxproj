@@ -182,6 +182,8 @@
 		9CAE0C1623A7CFB700BB5885 /* Marvel-Hero-demo */ = {
 			isa = PBXGroup;
 			children = (
+				9CAE0C5D23A8439E00BB5885 /* Constants.swift */,
+				9CAE0C1723A7CFB700BB5885 /* AppDelegate.swift */,
 				9C40AE9623B6C9E10018CB39 /* Helpers */,
 				9CDA438223AD19880013D602 /* Coordinators */,
 				9C3597D123A91BA1008A7DF4 /* Scenes */,
@@ -190,7 +192,6 @@
 				9CAE0C4E23A7EC3B00BB5885 /* Models */,
 				9C1524AF23AB8F9400272590 /* Extensions */,
 				9CAE0C4D23A7EB8700BB5885 /* Resources */,
-				9CAE0C1723A7CFB700BB5885 /* AppDelegate.swift */,
 				9CDA438523AD30280013D602 /* TableViewCell.swift */,
 				9CAE0C2923A7CFBD00BB5885 /* Info.plist */,
 			);
@@ -233,7 +234,6 @@
 				9C366ED423AA761D005530EE /* ComicData.swift */,
 				9CAE0C4F23A7EC6600BB5885 /* ComicResult.swift */,
 				9CAE0C5123A7ECC300BB5885 /* Thumbnail.swift */,
-				9CAE0C5D23A8439E00BB5885 /* Constants.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
