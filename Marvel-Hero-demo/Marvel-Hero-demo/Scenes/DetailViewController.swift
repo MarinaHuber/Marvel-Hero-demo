@@ -9,7 +9,7 @@
 import UIKit
 import AlamofireImage
 
-final class DetailViewController: UIViewController, StoryboardProtocol {
+final class DetailViewController: UIViewController, StoryboardProtocol, Alertable {
     
         // MARK: - Properties
     @IBOutlet weak var activityImage: UIActivityIndicatorView!
@@ -54,7 +54,7 @@ final class DetailViewController: UIViewController, StoryboardProtocol {
                 }
             }
         } else {
-            UIAlertController().alert(message: "No comics", title: "Unknown name")
+            presentAlert(title: "No comics", message: "Unknown name")
         }
     }
     
