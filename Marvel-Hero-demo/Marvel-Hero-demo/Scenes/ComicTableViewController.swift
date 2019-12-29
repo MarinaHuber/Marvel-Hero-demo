@@ -8,12 +8,17 @@
 
 import UIKit
 
+protocol DetailControllerDelegate {
+    func presentDetailViewController(with name: String?)
+}
+
 final class ComicTableViewController: UIViewController, StoryboardProtocol {
     
     enum Section: CaseIterable {
         case main
     }
-    // MARK: - Properties
+// MARK: - Properties
+    var delegate: DetailControllerDelegate?
     @IBOutlet weak var activityMain: UIActivityIndicatorView!
     weak var tableView: UITableView!
     private (set) var dataSource:UITableViewDiffableDataSource<Section, ComicResult>!
@@ -36,7 +41,8 @@ final class ComicTableViewController: UIViewController, StoryboardProtocol {
         activityMain.isHidden = false
         activityMain.startAnimating()
      }
-        // MARK: - LifeCycle
+    
+// MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         loadView()
@@ -81,10 +87,7 @@ extension ComicTableViewController: UITableViewDelegate {
     
      func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let comic = dataSource.itemIdentifier(for: indexPath) {
-            let storyboard: UIStoryboard = UIStoryboard(name: "DetailViewController", bundle: nil)
-            let vc: DetailViewController = DetailViewController.instantiate(from: storyboard)
-            vc.selectedName = comic.name ?? ""
-            navigationController?.pushViewController(vc, animated: false)
+            delegate?.presentDetailViewController(with: comic.name)
         }
     }
 }
