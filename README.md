@@ -30,6 +30,6 @@ Technologies and patterns
     * Dark/Ligt mode for iOS13
 *  To FIX
     * functions that are expensive in performace
-    * coordinator pattern fully impemented
+    * coordinator pattern with completion handlers
     * UITableView automatic resizing cell
     * error handeling
