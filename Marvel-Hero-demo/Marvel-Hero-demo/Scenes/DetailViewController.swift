@@ -24,10 +24,17 @@ final class DetailViewController: UIViewController, StoryboardProtocol, Alertabl
         imageComicCover.clipsToBounds = true
     }
     // MARK: - Network load
-    /// TO DO: refactor this expensive func
+    
     private func loadSelectedName(newName: String) {
         ///af_setImage will automatically find and load the image if it is cached
-        if newName.isEmpty == false, newName == selectedName {
+       
+        guard
+            newName == selectedName,
+            newName.isEmpty == false
+            else {
+                presentAlert(title: "No comics", message: "Unknown name")
+                return
+            }
             MarvelDataLoader().request(.getComics, model: ComicObjectData.self) { result in
                 switch result {
                     case .success:
@@ -53,9 +60,7 @@ final class DetailViewController: UIViewController, StoryboardProtocol, Alertabl
                         assertionFailure("some error: \(APIError.networkFailed)")
                 }
             }
-        } else {
-            presentAlert(title: "No comics", message: "Unknown name")
-        }
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
